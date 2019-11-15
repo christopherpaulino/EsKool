@@ -25,6 +25,8 @@ class HomeState extends State<HomePage>{
               title: Text('Cursos')
           ), BottomNavigationBarItem(
               icon: Icon(Icons.settings),
+
+              
               title: Text('Administrar')
           )
         ],
