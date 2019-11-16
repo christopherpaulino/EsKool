@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'create_Course.dart';
+import 'package:eskool/home_page.dart';
 
 
 class adminPage extends StatefulWidget {
@@ -17,6 +18,7 @@ class _adminPageState extends State<adminPage> {
           title: Text('Administrar'),
           backgroundColor: Colors.blueAccent,
         ),
+
         body: ListView(
           padding: const EdgeInsets.all(8),
 
