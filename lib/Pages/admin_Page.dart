@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'create_Course.dart';
+
 
 class adminPage extends StatefulWidget {
   @override
@@ -11,6 +13,8 @@ class _adminPageState extends State<adminPage> {
     return Container(
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
+          title: Text('Administrar'),
           backgroundColor: Colors.blueAccent,
         ),
         body: ListView(
@@ -37,7 +41,9 @@ class _adminPageState extends State<adminPage> {
               child: ListTile(
                 leading: Icon(Icons.school),
                 title: Text('Agregar Curso'),
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => createCourse()));
+                },
               ),
             ),
 
