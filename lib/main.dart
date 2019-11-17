@@ -1,4 +1,5 @@
 import 'package:eskool/Pages/admin_Page.dart';
+import 'package:eskool/Pages/course_Page.dart';
 import 'package:eskool/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: adminPage(),
+      home: CoursePage(),
     );
   }
 }

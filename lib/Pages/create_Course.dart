@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:eskool/Models/cursoModel.dart';
+import 'package:eskool/Providers/db_providers.dart';
 
 class createCourse extends StatefulWidget {
   @override
@@ -7,7 +9,10 @@ class createCourse extends StatefulWidget {
 
 class _createCourseState extends State<createCourse> {
   @override
+
   final cursoController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
@@ -46,7 +51,11 @@ class _createCourseState extends State<createCourse> {
                     content: Text('Curso Agregado'),
                     action: SnackBarAction(
                       label: 'Undo',
-                      onPressed: (){},
+                      onPressed: (){
+                        if(_formKey.currentState.validate()){
+                          CursoPrivider.db.addCurso(CursoModel(nombre: cursoController.text));
+                        }
+                      },
                     ),
               );
                   Scaffold.of(context).showSnackBar(snackBar);
