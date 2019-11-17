@@ -10,21 +10,10 @@ class HomePage extends StatefulWidget{
 
 class HomeState extends State<HomePage>{
 
-
-
- Widget _pageChooser(int page){
-   switch(page){
-     case 0:
-       return adminPage();
-   }
-
- }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
@@ -37,9 +26,6 @@ class HomeState extends State<HomePage>{
               title: Text('Administrar')
           )
         ],
-//        onTap: (){
-//
-//        },
       ),
       body: Center(
         child: Text("klk"),
