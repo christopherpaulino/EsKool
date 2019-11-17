@@ -6,9 +6,9 @@ import 'package:path/path.dart';
 
 class DBConexion{
   static Database _database;
-  static final DBConexion db = DBConexion._private();
+  static final DBConexion db = DBConexion();
 
-  DBConexion._private();
+  DBConexion();
 
   Future<Database> get database async{
     if(_database != null) return _database;
@@ -19,7 +19,7 @@ class DBConexion{
 
   initDataBase() async {
     Directory appDirectory = await getApplicationDocumentsDirectory();
-    final String path = join(appDirectory.path, 'eskool.db');
+    final String path = join(appDirectory.path, 'eskool1.db');
 
     return await openDatabase(
       path,

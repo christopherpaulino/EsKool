@@ -14,7 +14,7 @@ class CoursePage extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
       ),
       body: FutureBuilder<List<CursoModel>>(
-        future: CursoProvider.db.listCursos(),
+        future: CursoProvider.db.listCurso(),
         builder: (BuildContext context, AsyncSnapshot<List<CursoModel>> snapshot) {
 
           if (!snapshot.hasData) {

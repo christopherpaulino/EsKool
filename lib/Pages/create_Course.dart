@@ -2,19 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:eskool/Models/cursoModel.dart';
 import 'package:eskool/Providers/db_providers.dart';
 
-class createCourse extends StatefulWidget {
-  @override
-  _createCourseState createState() => _createCourseState();
-}
-
-class _createCourseState extends State<createCourse> {
+class createCourse extends StatelessWidget {
   @override
 
   final cursoController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   Widget build(BuildContext context) {
-    return Container(
+    return Form(
+      key: _formKey,
+      child: Container(
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blueAccent,
@@ -46,25 +43,30 @@ class _createCourseState extends State<createCourse> {
               RaisedButton(
                 child: Text('Agregar'),
                 onPressed: (){
-                  final snackBar = SnackBar(
-                    duration: Duration(milliseconds:1200),
-                    content: Text('Curso Agregado'),
-                    action: SnackBarAction(
-                      label: 'Undo',
-                      onPressed: (){
-                        if(_formKey.currentState.validate()){
-                          CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
-                        }
-                      },
-                    ),
-              );
-                  Scaffold.of(context).showSnackBar(snackBar);
+                  //CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
+
+                  if(_formKey.currentState.validate()){
+                    CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
+
+                    final snackBar = SnackBar(
+                      duration: Duration(milliseconds:1200),
+                      content: Text('El usuario ha sido guardado'),
+                      action: SnackBarAction(
+                        label: 'Undo',
+                        onPressed: (){},
+                      ),
+
+                    );
+                    Scaffold.of(context).showSnackBar(snackBar);
+                    _formKey.currentState?.reset();
+                  }
                 },
               )
             ],
           ),
         ),
       ),
+    ),
     );
   }
 }
