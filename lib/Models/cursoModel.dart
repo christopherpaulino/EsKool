@@ -6,8 +6,8 @@ class CursoModel{
 
   //Constructor
   CursoModel.fromMap(Map<String, dynamic>map){
-    id = map[id];
-    nombre = map[nombre];
+    id = map['id'];
+    nombre = map['nombre'];
   }
 
   //Metodo

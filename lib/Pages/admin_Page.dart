@@ -1,4 +1,5 @@
-  import 'package:flutter/material.dart';
+  import 'package:eskool/Pages/course_Page.dart';
+import 'package:flutter/material.dart';
 import 'create_Course.dart';
 import 'package:eskool/home_page.dart';
 
@@ -61,7 +62,9 @@ class _adminPageState extends State<adminPage> {
               child: ListTile(
                 leading: Icon(Icons.list),
                 title: Text('Lista de Excusas'),
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => CoursePage()));
+                },
               ),
             )
 

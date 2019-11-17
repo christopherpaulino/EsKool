@@ -53,7 +53,7 @@ class _createCourseState extends State<createCourse> {
                       label: 'Undo',
                       onPressed: (){
                         if(_formKey.currentState.validate()){
-                          CursoPrivider.db.addCurso(CursoModel(nombre: cursoController.text));
+                          CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
                         }
                       },
                     ),

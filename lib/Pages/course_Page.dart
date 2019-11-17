@@ -2,20 +2,19 @@ import 'package:eskool/Models/cursoModel.dart';
 import 'package:eskool/Providers/db_providers.dart';
 import 'package:flutter/material.dart';
 
-class CoursePage extends StatefulWidget {
+class CoursePage extends StatelessWidget {
   @override
-  _CoursePageState createState() => _CoursePageState();
-}
 
-class _CoursePageState extends State<CoursePage> {
-  @override
+
+
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
       ),
       body: FutureBuilder<List<CursoModel>>(
-        future: CursoPrivider.db.listCurso(),
+        future: CursoProvider.db.listCursos(),
         builder: (BuildContext context, AsyncSnapshot<List<CursoModel>> snapshot) {
 
           if (!snapshot.hasData) {
@@ -34,9 +33,11 @@ class _CoursePageState extends State<CoursePage> {
             );
           }
 
-          return ListView(
-            children: _listaMapCursos(context, snapshot.data),
-          );
+          return
+              ListView(
+                children: _listaMapCursos(context, snapshot.data),
+              );
+
         },
       ),
     ) ;
@@ -74,8 +75,8 @@ class _CoursePageState extends State<CoursePage> {
 //
 //  }
 
-  List<Widget> _listaMapCursos(BuildContext context, List<CursoModel> cursos) {
-    return  cursos.map((curso) {
+  List<Widget> _listaMapCursos(BuildContext context, List<CursoModel> curso) {
+    return  curso.map((cursos) {
 
 
 
@@ -107,8 +108,8 @@ class _CoursePageState extends State<CoursePage> {
           children: <Widget>[
             ListTile(
               leading: Icon(Icons.perm_identity),
-              title: Text(curso.nombre),
-              subtitle: Text('ID: ${curso.id}' ),
+              title: Text(cursos.nombre),
+              subtitle: Text('ID: ${cursos.id}' ),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
                // Navigator.pushNamed(context, 'user_details', arguments: 'user');

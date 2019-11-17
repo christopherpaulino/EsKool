@@ -3,22 +3,23 @@ import 'package:eskool/DataBase/db_conexion.dart';
 
 
 
-class CursoPrivider extends DBConexion{
-  static final CursoPrivider db = CursoPrivider();
 
-  Future<int> addCurso(CursoModel curso) async{
+class CursoProvider extends DBConexion{
+  static final CursoProvider db = CursoProvider();
+
+  Future<int> addCurso(CursoModel cursos) async{
     final db =  await database;
-    final cursoId = await db.insert('materias', curso.toMap());
-    return cursoId;
+    final cursosId = await db.insert('materias', cursos.toMap());
+    return cursosId;
   }
 
-  Future<List<CursoModel>> listCurso() async{
+  Future<List<CursoModel>> listCursos() async{
     final db = await database;
-    final results = await db.query('materias');
+    final results = await db.query('curso');
 
-    List<CursoModel> eskool = results.isNotEmpty? results.map((curso)
+    List<CursoModel> curso = results.isNotEmpty? results.map((curso)
     => CursoModel.fromMap(curso)).toList():[];
-    return eskool;
+    return curso;
 
 
   }

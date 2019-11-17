@@ -6,9 +6,9 @@ import 'package:path/path.dart';
 
 class DBConexion{
   static Database _database;
-  static final DBConexion db = DBConexion();
+  static final DBConexion db = DBConexion._private();
 
-  DBConexion();
+  DBConexion._private();
 
   Future<Database> get database async{
     if(_database != null) return _database;
@@ -34,7 +34,4 @@ class DBConexion{
       },
     );
   }
-
-
-
 }
