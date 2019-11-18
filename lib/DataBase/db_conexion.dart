@@ -8,6 +8,8 @@ class DBConexion{
   static Database _database;
   static final DBConexion db = DBConexion();
 
+
+
   DBConexion();
 
   Future<Database> get database async{
