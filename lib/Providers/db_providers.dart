@@ -37,9 +37,9 @@ class MateriasProvider extends DBConexion{
     final db = await database;
     final results = await db.query('materias');
 
-    List<MateriasModel> materias = results.isNotEmpty ? results.map((materias) => MateriasModel.fromMap(materias))
+    List<MateriasModel> materia = results.isNotEmpty ? results.map((materias) => MateriasModel.fromMap(materias))
         .toList()
         :[];
-    return materias;
+    return materia;
   }
 }

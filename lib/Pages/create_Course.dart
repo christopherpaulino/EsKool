@@ -20,7 +20,7 @@ class CreateCourse extends StatelessWidget {
           title: Text('Agregar Curso'),
         ),
         body: Container(
-          margin: EdgeInsets.all(50.0),
+          //margin: EdgeInsets.all(50.0),
           //padding: EdgeInsets.all(100.0),
           child: Column(
             children: <Widget>[
