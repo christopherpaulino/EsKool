@@ -1,28 +1,32 @@
 import 'package:eskool/Models/cursoModel.dart';
 import 'package:eskool/Providers/db_providers.dart';
+import 'package:eskool/Repository/repository.dart';
 
-
-abstract class CursoRepository{
-
-  Future<void> addCurso(CursoModel curso);
-  Future<List<CursoModel>> listCurso();
-
-}
-
-class SqliteCursoRepository implements CursoRepository {
-
+ class CursoRepository implements Respository<CursoModel>{
   final provider = CursoProvider.db;
-
   @override
-  Future<List<CursoModel>> listCurso() {
-    // TODO: implement listCurso
-    return null;
+  Future<List<CursoModel>> list() {
+    return provider.listCurso();
   }
 
   @override
-  Future<void> addCurso(CursoModel curso) {
-    // TODO: implement addCurso
-    return null;
+  Future<void> add(CursoModel curso) {
+    return provider.addCurso(curso);
   }
+/* Cuando creas lo demás metodos o puedes descomentar y implementar el respository completo
+  @override
+  Future<void> delete(int id) {
+    return provider.deleteIngresoById(id);
+  }
+
+  @override
+  Future<void> update(CursoModel ingreso) {
+    return provider.updateIngreso(ingreso);
+  }
+
+  @override
+  Future<List<CursoModel>> search(int mes) {
+    return provider.searchIngresoMes(mes);
+  }*/
 }
 

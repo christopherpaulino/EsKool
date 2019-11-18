@@ -1,3 +1,4 @@
+import 'package:eskool/Blocs/Bloc%20Cursos/curso_bloc.dart';
 import 'package:eskool/Models/cursoModel.dart';
 import 'package:eskool/Providers/db_providers.dart';
 import 'package:flutter/material.dart';
@@ -5,16 +6,15 @@ import 'package:flutter/material.dart';
 class CoursePage extends StatelessWidget {
   @override
 
-
-
+final cursoBloc = CursoBloc();
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
       ),
-      body: FutureBuilder<List<CursoModel>>(
-        future: CursoProvider.db.listCurso(),
+      body: StreamBuilder<List<CursoModel>>(
+        stream: cursoBloc.cursoStream,
         builder: (BuildContext context, AsyncSnapshot<List<CursoModel>> snapshot) {
 
           if (!snapshot.hasData) {

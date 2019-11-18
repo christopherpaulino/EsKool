@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eskool/Blocs/Bloc Cursos/curso_bloc.dart';
 import 'package:eskool/Models/cursoModel.dart';
 import 'package:eskool/Providers/db_providers.dart';
 
@@ -7,7 +8,7 @@ class createCourse extends StatelessWidget {
 
   final cursoController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-
+  final cursoBloc  = CursoBloc();
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
@@ -46,8 +47,8 @@ class createCourse extends StatelessWidget {
                   //CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
 
                   if(_formKey.currentState.validate()){
-                    CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
-
+                   //CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
+                    cursoBloc.addCurso(CursoModel(nombre: cursoController.text));
                     final snackBar = SnackBar(
                       duration: Duration(milliseconds:1200),
                       content: Text('El usuario ha sido guardado'),

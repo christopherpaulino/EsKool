@@ -1,11 +1,10 @@
 import 'dart:async';
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:eskool/Pages/create_Course.dart';
+import 'package:eskool/Repository/repository.dart';
 import 'package:meta/meta.dart';
-import 'package:eskool/Providers/db_providers.dart';
 import 'package:eskool/Models/cursoModel.dart';
 import 'package:eskool/Repository/curso_repository.dart';
+
 
 part 'curso_events.dart';
 part 'curso_state.dart';
@@ -13,7 +12,7 @@ part 'curso_state.dart';
 class CursoBloc{
 
   static final CursoBloc _singleton = CursoBloc._();
-  final CursoRepository _cursoRepository = SqliteCursoRepository();
+ final Respository _cursoRespository = CursoRepository();
   final _cursoBroadcast = StreamController<List<CursoModel>>.broadcast();
 
   factory CursoBloc(){
@@ -26,11 +25,11 @@ class CursoBloc{
 
   Stream<List<CursoModel>> get cursoStream => _cursoBroadcast.stream;
   listCurso() async {
-    _cursoBroadcast.sink.add( await CursoProvider.db.listCurso());
+    _cursoBroadcast.sink.add( await _cursoRespository.list());
   }
 
-  createCourse(CursoModel curso) async {
-    await _cursoRepository.addCurso(curso);
+  addCurso(CursoModel curso) async {
+    await _cursoRespository.add(curso);
     listCurso();
   }
 
