@@ -13,8 +13,12 @@ final cursoBloc = CursoBloc();
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
       ),
-      body: StreamBuilder<List<CursoModel>>(
-        stream: cursoBloc.cursoStream,
+      body:
+//      StreamBuilder<List<CursoModel>>(
+//        stream: cursoBloc.cursoStream,
+        FutureBuilder<List<CursoModel>>(
+          future: CursoProvider.db.list(),
+
         builder: (BuildContext context, AsyncSnapshot<List<CursoModel>> snapshot) {
 
           if (!snapshot.hasData) {
@@ -42,37 +46,6 @@ final cursoBloc = CursoBloc();
     ) ;
   }
 
-
-//  Widget build(BuildContext context){
-//    return FutureBuilder<List<CursoModel>>(
-//      future: CursoPrivider.db.listCurso(),
-//      builder: (BuildContext context, AsyncSnapshot<List<CursoModel>> snapshot) {
-//
-//        if (!snapshot.hasData) {
-//          return
-//            Center(
-//              child: CircularProgressIndicator(),
-//            );
-//        }
-//
-//        if (snapshot.data ==0) {
-//          return Center(
-//            child: Text(
-//              'No hay usuarios registrados',
-//              style: TextStyle(fontSize: 28.0, color: Colors.red),
-//            ),
-//          );
-//        }
-//
-//        return ListView(
-//          children: _listaMapUsers(context, snapshot.data),
-//        );
-//      },
-//    );
-//
-//
-//
-//  }
 
   List<Widget> _listaMapCursos(BuildContext context, List<CursoModel> curso) {
     return  curso.map((cursos) {

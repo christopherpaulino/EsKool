@@ -8,7 +8,7 @@ abstract class CursoEvent extends Equatable{
   List<Object> get props => [];
 }
 
-class LoadCursos extends CursoEvent{}
+class LoadCurso extends CursoEvent{}
 
 class AddCurso extends CursoEvent{
   final CursoModel curso;
