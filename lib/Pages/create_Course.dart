@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:eskool/Blocs/Bloc Cursos/curso_bloc.dart';
 import 'package:eskool/Models/cursoModel.dart';
-import 'package:eskool/Providers/db_providers.dart';
 
-class createCourse extends StatelessWidget {
+
+class CreateCourse extends StatelessWidget {
   @override
 
   final cursoController = TextEditingController();

@@ -1,4 +1,5 @@
   import 'package:eskool/Pages/course_Page.dart';
+import 'package:eskool/Pages/create_materia.dart';
 import 'package:flutter/material.dart';
 import 'create_Course.dart';
 import 'package:eskool/home_page.dart';
@@ -45,7 +46,17 @@ class _adminPageState extends State<adminPage> {
                 leading: Icon(Icons.school),
                 title: Text('Agregar Curso'),
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => createCourse()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => CreateCourse()));
+                },
+              ),
+            ),
+
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.playlist_add_check),
+                title: Text('Materias'),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => CreateMateria()));
                 },
               ),
             ),

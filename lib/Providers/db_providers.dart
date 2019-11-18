@@ -1,16 +1,18 @@
 import 'package:eskool/Models/cursoModel.dart';
 import 'package:eskool/DataBase/db_conexion.dart';
+import 'package:eskool/Models/materiasModel.dart';
 
+//Cursos
 class CursoProvider extends DBConexion{
   static final CursoProvider db = CursoProvider();
 
-  Future<int> addCurso(CursoModel curso) async{
+  Future<int> add(CursoModel curso) async{
     final db =  await database;
     final cursoId = await db.insert('curso', curso.toMap());
     return cursoId;
   }
 
-  Future<List<CursoModel>> listCurso() async{
+  Future<List<CursoModel>> list() async{
     final db = await database;
     final results = await db.query('curso');
 
@@ -18,8 +20,26 @@ class CursoProvider extends DBConexion{
         .toList()
         : [];
     return curso;
-
-
   }
 }
 
+//Materias
+class MateriasProvider extends DBConexion{
+  static final MateriasProvider db = MateriasProvider();
+
+  Future<int> add(MateriasModel materia) async{
+    final db = await database;
+    final materiaId = await db.insert('materia', materia.toMap());
+    return materiaId;
+  }
+
+  Future<List<MateriasModel>> list() async{
+    final db = await database;
+    final results = await db.query('materias');
+
+    List<MateriasModel> materias = results.isNotEmpty ? results.map((materias) => MateriasModel.fromMap(materias))
+        .toList()
+        :[];
+    return materias;
+  }
+}
