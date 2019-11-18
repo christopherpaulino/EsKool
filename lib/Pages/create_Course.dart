@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:eskool/Blocs/Bloc Cursos/curso_bloc.dart';
 import 'package:eskool/Models/cursoModel.dart';
 
-
 class CreateCourse extends StatelessWidget {
   @override
 
@@ -45,10 +44,11 @@ class CreateCourse extends StatelessWidget {
                 child: Text('Agregar'),
                 onPressed: (){
                   //CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
-
+                  cursoBloc.addCurso(CursoModel(nombre: cursoController.text));
                   if(_formKey.currentState.validate()){
                    //CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
-                    cursoBloc.addCurso(CursoModel(nombre: cursoController.text));
+
+
                     final snackBar = SnackBar(
                       duration: Duration(milliseconds:1200),
                       content: Text('El usuario ha sido guardado'),

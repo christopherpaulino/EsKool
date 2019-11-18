@@ -1,4 +1,4 @@
-  import 'package:eskool/Pages/course_Page.dart';
+import 'package:eskool/Pages/course_Page.dart';
 import 'package:eskool/Pages/create_materia.dart';
 import 'package:flutter/material.dart';
 import 'create_Course.dart';
@@ -21,8 +21,9 @@ class _adminPageState extends State<adminPage> {
           backgroundColor: Colors.blueAccent,
         ),
 
-        body: ListView(
-          padding: const EdgeInsets.all(8),
+        body: Column(
+          //padding: const EdgeInsets.all(8),
+         //margin: EdgeInsets.all(50.0),
 
           children: <Widget>[
             Card(
