@@ -11,7 +11,7 @@ part 'curso_state.dart';
 class CursoBloc{
 
   static final CursoBloc _singleton = CursoBloc._();
- final Respository _cursoRespository = CursoRepository();
+  final Respository _cursoRespository = CursoRepository();
   final _cursoBroadcast = StreamController<List<CursoModel>>.broadcast();
 
   factory CursoBloc(){
