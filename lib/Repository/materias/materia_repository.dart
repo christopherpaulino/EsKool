@@ -15,6 +15,6 @@ class MateriaRepository implements Repository<MateriasModel>{
   @override
   Future<void> add(MateriasModel materia) {
     // TODO: implement addm
-    return provider.addm(materia);
+    return provider.add(materia);
   }
 }
