@@ -1,3 +1,4 @@
+import 'package:eskool/Providers/db_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:eskool/Blocs/Bloc Cursos/curso_bloc.dart';
 import 'package:eskool/Models/cursoModel.dart';
@@ -44,7 +45,7 @@ class CreateCourse extends StatelessWidget {
               RaisedButton(
                 child: Text('Agregar'),
                 onPressed: (){
-                  //CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
+                  //CursoProvider.db.add(CursoModel(nombre: cursoController.text));
                   cursoBloc.addCurso(CursoModel(nombre: cursoController.text));
                   if(_formKey.currentState.validate()){
                    //CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));

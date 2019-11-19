@@ -16,8 +16,11 @@ class MateriasPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
       ),
-      body: StreamBuilder<List<MateriasModel>>(
-        stream: materiaBloc.materiaStrem,
+      body:
+//      StreamBuilder<List<MateriasModel>>(
+//        stream: materiaBloc.materiaStrem,
+        FutureBuilder<List<MateriasModel>>(
+          future: MateriasProvider.db.list(),
         builder: (BuildContext context, AsyncSnapshot<List<MateriasModel>> snapshot){
     if (!snapshot.hasData) {
       return

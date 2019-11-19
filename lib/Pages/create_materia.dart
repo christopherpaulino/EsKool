@@ -1,4 +1,5 @@
 import 'package:eskool/Models/materiasModel.dart';
+import 'package:eskool/Providers/db_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:eskool/Blocs/Bloc Materias/materia_bloc.dart';
 
@@ -43,6 +44,7 @@ class CreateMateria extends StatelessWidget {
               RaisedButton(
                 child: Text('Agregar'),
                 onPressed: () {
+                  //MateriasProvider.db.add(MateriasModel(nombre: materiaController.text));
                   materiaBloc.addMateria(MateriasModel(nombre: materiaController.text));
                 },
               ),
