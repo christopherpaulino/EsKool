@@ -21,7 +21,7 @@ class DBConexion{
 
   initDataBase() async {
     Directory appDirectory = await getApplicationDocumentsDirectory();
-    final String path = join(appDirectory.path, 'eskool2.db');
+    final String path = join(appDirectory.path, 'eskool5.db');
 
     return await openDatabase(
       path,
