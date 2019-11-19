@@ -1,12 +1,13 @@
 class CursoModel{
-  int id, idMateria;
+  int curso_id;
+  int idMateria;
   String nombre;
 
-  CursoModel({this.id, this.nombre, this.idMateria});
+  CursoModel({this.curso_id, this.nombre, this.idMateria});
 
   //Constructor
   CursoModel.fromMap(Map<String, dynamic>map){
-    id = map['id'];
+    curso_id = map['curso_id'];
     nombre = map['nombre'];
    // idMateria =map['idMateria'];
   }
@@ -14,7 +15,7 @@ class CursoModel{
   //Metodo
   Map<String, dynamic> toMap(){
     return{
-      'id': id,
+      'curso_id': curso_id,
       'nombre': nombre,
       //'idMateria'; idMateria,
     };
