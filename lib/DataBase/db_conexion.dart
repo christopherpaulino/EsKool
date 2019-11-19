@@ -21,17 +21,18 @@ class DBConexion{
 
   initDataBase() async {
     Directory appDirectory = await getApplicationDocumentsDirectory();
-    final String path = join(appDirectory.path, 'eskool5.db');
+    final String path = join(appDirectory.path, 'eskool73.db');
 
     return await openDatabase(
       path,
       version: 2,
       onOpen: (db){},
       onCreate:(Database db, int version) async{
-        await db.execute('CREATE TABLE materias(id INTEGER PRIMARY KEY AUTOINCREMENT,'
+        await db.execute('CREATE TABLE materias(materia_id INTEGER PRIMARY KEY AUTOINCREMENT,'
             ' nombre VARCHAR NOT NULL)');
         await db.execute('CREATE TABLE curso(id INTEGER PRIMARY KEY AUTOINCREMENT,'
-            ' nombre VARCHAR NOT NULL)');
+            ' nombre VARCHAR NOT NULL,'
+            ' materia_id INTEGER)');
 
       },
     );

@@ -1,19 +1,19 @@
 class MateriasModel{
-  int id;
+  int materia_id;
   String nombre;
 
-  MateriasModel({this.id, this.nombre});
+  MateriasModel({this.materia_id, this.nombre});
 
   //Constructor
   MateriasModel.fromMap(Map<String, dynamic>map){
-    id = map['id'];
+    materia_id = map['id_materia'];
     nombre = map['nombre'];
   }
 
   //Metodo
   Map<String, dynamic> toMap(){
     return{
-      'id': id,
+      'id_materia': materia_id,
       'nombre': nombre,
     };
   }
