@@ -86,7 +86,7 @@ final cursoBloc = CursoBloc();
             ListTile(
               leading: Icon(Icons.perm_identity),
               title: Text(cursos.nombre),
-              subtitle: Text('ID: ${cursos.id}' ),
+//              subtitle: Text('ID: ${cursos.id}' ),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
                // Navigator.pushNamed(context, 'user_details', arguments: 'user');
