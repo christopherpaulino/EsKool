@@ -30,7 +30,7 @@ class MateriasProvider extends DBConexion{
 
   Future<int> add(MateriasModel materia) async{
     final db = await database;
-    final materiaId = await db.insert('materia', materia.toMap());
+    final materiaId = await db.insert('materias', materia.toMap());
     return materiaId;
   }
 
@@ -38,9 +38,9 @@ class MateriasProvider extends DBConexion{
     final db = await database;
     final results = await db.query('materias');
 
-    List<MateriasModel> materia = results.isNotEmpty ? results.map((materias) => MateriasModel.fromMap(materias))
+    List<MateriasModel> materias = results.isNotEmpty ? results.map((materias) => MateriasModel.fromMap(materias))
         .toList()
         :[];
-    return materia;
+    return materias;
   }
 }

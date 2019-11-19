@@ -54,7 +54,7 @@ class _adminPageState extends State<adminPage> {
 
             Card(
               child: ListTile(
-                leading: Icon(Icons.playlist_add_check),
+                leading: Icon(Icons.book),
                 title: Text('Materias'),
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => CreateMateria()));
@@ -79,9 +79,7 @@ class _adminPageState extends State<adminPage> {
                 },
               ),
             )
-
           ],
-
         )
       ),
     );

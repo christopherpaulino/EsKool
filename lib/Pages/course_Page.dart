@@ -1,5 +1,6 @@
-import 'package:eskool/Blocs/Bloc%20Cursos/curso_bloc.dart';
+import 'package:eskool/Blocs/Bloc Cursos/curso_bloc.dart';
 import 'package:eskool/Models/cursoModel.dart';
+import 'package:eskool/Models/materiasModel.dart';
 import 'package:eskool/Providers/db_providers.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ final cursoBloc = CursoBloc();
         FutureBuilder<List<CursoModel>>(
           future: CursoProvider.db.list(),
 
+
         builder: (BuildContext context, AsyncSnapshot<List<CursoModel>> snapshot) {
 
           if (!snapshot.hasData) {
@@ -37,9 +39,14 @@ final cursoBloc = CursoBloc();
             );
           }
 
+
+
           return
               ListView(
                 children: _listaMapCursos(context, snapshot.data),
+
+
+
               );
         },
       ),
@@ -49,8 +56,6 @@ final cursoBloc = CursoBloc();
 
   List<Widget> _listaMapCursos(BuildContext context, List<CursoModel> curso) {
     return  curso.map((cursos) {
-
-
 
       return Dismissible(
         key: UniqueKey(),

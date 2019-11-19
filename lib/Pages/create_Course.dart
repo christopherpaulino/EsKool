@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:eskool/Blocs/Bloc Cursos/curso_bloc.dart';
 import 'package:eskool/Models/cursoModel.dart';
+import 'package:eskool/Pages/materias_page.dart';
 
 class CreateCourse extends StatelessWidget {
   @override
@@ -61,6 +62,12 @@ class CreateCourse extends StatelessWidget {
                     Scaffold.of(context).showSnackBar(snackBar);
                     _formKey.currentState?.reset();
                   }
+                },
+              ),
+              RaisedButton(
+                child: Text('Agregar Materias'),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MateriasPage()));
                 },
               )
             ],

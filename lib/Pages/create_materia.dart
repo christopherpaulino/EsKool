@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:eskool/Blocs/Bloc Materias/materia_bloc.dart';
 
 final materiaBloc = MateriaBloc();
+
 class CreateMateria extends StatelessWidget {
   @override
   final materiaController = TextEditingController();
@@ -43,8 +44,6 @@ class CreateMateria extends StatelessWidget {
                 child: Text('Agregar'),
                 onPressed: () {
                   materiaBloc.addMateria(MateriasModel(nombre: materiaController.text));
-                  //cursoBloc.addCurso(CursoModel(nombre: cursoController.text));
-
                 },
               ),
             ],
