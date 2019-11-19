@@ -2,6 +2,7 @@ class CursoModel{
   int id;
   String nombre;
 
+
   CursoModel({this.id, this.nombre});
 
   //Constructor
