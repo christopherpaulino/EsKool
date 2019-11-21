@@ -8,7 +8,17 @@ class create_student extends StatefulWidget {
 class _create_studentState extends State<create_student> {
   @override
 
-  TextEditingController _inputFieldDateController = new TextEditingController();
+
+  TextEditingController nombreController = new TextEditingController();
+  TextEditingController apellidoController = new TextEditingController();
+  TextEditingController fechaController = new TextEditingController();
+  TextEditingController madreController = new TextEditingController();
+  TextEditingController madreTelController = new TextEditingController();
+  TextEditingController madreEmailController = new TextEditingController();
+  TextEditingController padreController = new TextEditingController();
+  TextEditingController padreTelController = new TextEditingController();
+  TextEditingController padreEmailController = new TextEditingController();
+
 
   String _fecha = '';
 
@@ -118,7 +128,7 @@ class _create_studentState extends State<create_student> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
       child: TextFormField(
-        controller: _inputFieldDateController,
+        controller: fechaController,
         enableInteractiveSelection: false,
         decoration: InputDecoration(
           border: OutlineInputBorder(
@@ -246,7 +256,7 @@ class _create_studentState extends State<create_student> {
     if(picked != null){
       setState(() {
         _fecha = picked.toString();
-        _inputFieldDateController.text = _fecha;
+        fechaController.text = _fecha;
       });
     }
   }
