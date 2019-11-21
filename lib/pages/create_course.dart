@@ -8,6 +8,7 @@ class CreateCourse extends StatelessWidget {
   @override
 
   final cursoController = TextEditingController();
+  final centroController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   CursoBloc cursoBloc;
   CursoModel curso = new CursoModel();
@@ -21,7 +22,7 @@ class CreateCourse extends StatelessWidget {
 //    }
 
     return Form(
-      key: _formKey,
+      //key: _formKey,
       child: Container(
       child: Scaffold(
         appBar: AppBar(
@@ -29,62 +30,104 @@ class CreateCourse extends StatelessWidget {
           centerTitle: true,
           title: Text('Agregar Curso'),
         ),
-        body: Container(
-          //margin: EdgeInsets.all(50.0),
-          //padding: EdgeInsets.all(100.0),
+        body:  _cursoForm(context)
+      ),
+    ),
+    );
+  }
+
+  Widget _cursoForm(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
+    return Column(
+      children: <Widget>[
+        SafeArea(
+          child: Container(
+            height: 40.0,
+          ),
+        ),
+
+
+        Container(
+          width: size.width * 0.85,
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(5.0),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 3.0,
+                offset: Offset(0.0,0.5),
+                spreadRadius: 3.0
+              )
+            ]
+          ),
+          
           child: Column(
             children: <Widget>[
-              SizedBox(height: 70.0,),
+              SizedBox(height: 40.0,),
               TextFormField(
+                autofocus: true,
                 decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(20.0),
-                  labelText: 'Curso',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0)
+                    ),
+                    labelText: 'Grado',
+                    suffixIcon: Icon(Icons.book),
+                    labelStyle: TextStyle(fontSize: 18.0)
                 ),
                 controller: cursoController,
               ),
-//              TextFormField(
-//                decoration: InputDecoration(
-//                  contentPadding: EdgeInsets.all(20.0),
-//                  labelText: 'Curso',
-//                ),
-//                controller: cursoController,
-//              ),
               SizedBox(height: 20.0,),
+
+              TextFormField(
+                autofocus: true,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0)
+                    ),
+                    labelText: 'Centro',
+                    suffixIcon: Icon(Icons.book),
+                    labelStyle: TextStyle(fontSize: 18.0)
+                ),
+                controller: centroController,
+              ),
+              SizedBox(height: 20.0,),
+
 
               RaisedButton(
                 child: Text('Agregar'),
                 onPressed: (){
                   //CursoProvider.db.add(CursoModel(nombre: cursoController.text));
                   cursoBloc.addCurso(CursoModel(nombre: cursoController.text));
-                  if(_formKey.currentState.validate()){
-                   //CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
+//                  if(_formKey.currentState.validate()){
+//                    //CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
 
-
-                    final snackBar = SnackBar(
-                      duration: Duration(milliseconds:1200),
-                      content: Text('El usuario ha sido guardado'),
-                      action: SnackBarAction(
-                        label: 'Undo',
-                        onPressed: (){},
-                      ),
-
-                    );
-                    Scaffold.of(context).showSnackBar(snackBar);
-                    _formKey.currentState?.reset();
-                  }
+//                    final snackBar = SnackBar(
+//                      duration: Duration(milliseconds:1200),
+//                      content: Text('El usuario ha sido guardado'),
+//                      action: SnackBarAction(
+//                        label: 'Undo',
+//                        onPressed: (){},
+//                      ),
+//
+//                    );
+//                    Scaffold.of(context).showSnackBar(snackBar);
+//                    _formKey.currentState?.reset();
+//                  }
                 },
               ),
-              RaisedButton(
-                child: Text('Agregar Materias'),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MateriasPage()));
-                },
-              )
+//              RaisedButton(
+//                child: Text('Agregar Materias'),
+//                onPressed: (){
+//                  Navigator.push(context, MaterialPageRoute(builder: (context) => MateriasPage()));
+//                },
+//              )
             ],
           ),
         ),
-      ),
-    ),
+      ],
     );
   }
 }

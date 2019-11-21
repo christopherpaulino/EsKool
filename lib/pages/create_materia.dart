@@ -60,7 +60,6 @@ class CreateMateria extends StatelessWidget {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20.0)
                     ),
-                    contentPadding: EdgeInsets.all(20.0),
                     labelText: 'Materia',
                     suffixIcon: Icon(Icons.book),
                     labelStyle: TextStyle(fontSize: 18.0)
