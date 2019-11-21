@@ -15,7 +15,7 @@ class CreateMateria extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.blueAccent,
           centerTitle: true,
-          title: Text('Asignaturas'),
+          title: Text('Agregar Materias'),
         ),
         body: _materiaForm(context)
 
