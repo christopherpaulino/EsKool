@@ -9,14 +9,6 @@ class _PasarListaState extends State<PasarLista> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Pase de Lista',style: TextStyle(
-          color: Colors.black87,
-          fontSize: 25.0
-        ),),
-        backgroundColor: Colors.white,
-      ),
     );
   }
 }

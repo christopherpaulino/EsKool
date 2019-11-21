@@ -15,9 +15,6 @@ final cursoBloc = CursoBloc();
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
-      ),
       body:
 //      StreamBuilder<List<CursoModel>>(
 //        stream: cursoBloc.cursoStream,
