@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:equatable/equatable.dart';
-import 'package:eskool/models/cursoModel.dart';
+import 'package:eskool/models/curso_model.dart';
 import 'package:eskool/repository/curso/curso_repository.dart';
 import 'package:eskool/repository/curso/repository.dart';
 import 'package:meta/meta.dart';

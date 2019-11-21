@@ -1,6 +1,6 @@
 import 'package:eskool/Providers/db_providers.dart';
 import 'package:eskool/blocs/bloc_curso/curso_bloc.dart';
-import 'package:eskool/models/cursoModel.dart';
+import 'package:eskool/models/curso_model.dart';
 import 'package:eskool/pages/materias_page.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +46,6 @@ class CreateCourse extends StatelessWidget {
             height: 40.0,
           ),
         ),
-
 
         Container(
           width: size.width * 0.85,
@@ -118,12 +117,12 @@ class CreateCourse extends StatelessWidget {
 //                  }
                 },
               ),
-//              RaisedButton(
-//                child: Text('Agregar Materias'),
-//                onPressed: (){
-//                  Navigator.push(context, MaterialPageRoute(builder: (context) => MateriasPage()));
-//                },
-//              )
+              RaisedButton(
+                child: Text('Agregar Materias'),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MateriasPage()));
+                },
+              )
             ],
           ),
         ),

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:equatable/equatable.dart';
-import 'package:eskool/models/materiasModel.dart';
+import 'package:eskool/models/materias_model.dart';
 import 'package:eskool/repository/materias/materia_repository.dart';
 import 'package:eskool/repository/materias/repository.dart';
 import 'package:meta/meta.dart';

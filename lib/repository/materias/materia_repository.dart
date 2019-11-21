@@ -1,6 +1,6 @@
 
 
-import 'package:eskool/models/materiasModel.dart';
+import 'package:eskool/models/materias_model.dart';
 import 'package:eskool/providers/db_providers.dart';
 import 'package:eskool/repository/materias/repository.dart';
 

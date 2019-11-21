@@ -72,7 +72,7 @@ class _adminPageState extends State<adminPage> {
                     leading: Icon(Icons.list),
                     title: Text('Lista de Excusas'),
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => CoursePage()));
+                      //Navigator.push(context, MaterialPageRoute(builder: (context) => CoursePage()));
                     },
                   ),
                 )

@@ -1,5 +1,5 @@
 import 'package:eskool/blocs/bloc_curso/curso_bloc.dart';
-import 'package:eskool/models/cursoModel.dart';
+import 'package:eskool/models/curso_model.dart';
 import 'package:eskool/providers/db_providers.dart';
 import 'package:flutter/material.dart';
 
