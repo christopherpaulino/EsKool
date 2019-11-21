@@ -7,9 +7,9 @@ abstract class Respository<T>{
   Future<void> add(T model);
 
   Future<List<T>> list();
-/*
-  Future<void> update(T model);
 
+  Future<void> update(T model);
+/*
   Future<List<T>> search(int mes);
 */
 }

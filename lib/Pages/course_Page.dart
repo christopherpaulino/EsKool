@@ -1,10 +1,16 @@
 import 'package:eskool/Blocs/Bloc Cursos/curso_bloc.dart';
 import 'package:eskool/Models/cursoModel.dart';
 import 'package:eskool/Models/materiasModel.dart';
+import 'package:eskool/Pages/create_Course.dart';
 import 'package:eskool/Providers/db_providers.dart';
 import 'package:flutter/material.dart';
 
-class CoursePage extends StatelessWidget {
+class CoursePage extends StatefulWidget {
+  @override
+  _CoursePageState createState() => _CoursePageState();
+}
+
+class _CoursePageState extends State<CoursePage> {
   @override
 
 final cursoBloc = CursoBloc();
@@ -53,7 +59,6 @@ final cursoBloc = CursoBloc();
     ) ;
   }
 
-
   List<Widget> _listaMapCursos(BuildContext context, List<CursoModel> curso) {
     return  curso.map((cursos) {
 
@@ -89,7 +94,7 @@ final cursoBloc = CursoBloc();
 //              subtitle: Text('ID: ${cursos.id}' ),
               trailing: Icon(Icons.arrow_forward_ios),
               onTap: () {
-               // Navigator.pushNamed(context, 'user_details', arguments: 'user');
+                Navigator.pushNamed(context, 'createCourse', arguments: curso);
               },
             ),
             Divider(
@@ -104,5 +109,4 @@ final cursoBloc = CursoBloc();
     }
     ).toList();
   }
-
 }

@@ -9,8 +9,17 @@ class CreateCourse extends StatelessWidget {
 
   final cursoController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  final cursoBloc  = CursoBloc();
+  CursoBloc cursoBloc;
+  CursoModel curso = new CursoModel();
   Widget build(BuildContext context) {
+
+    cursoBloc = CursoBloc();
+
+//    final CursoModel cursoData = ModalRoute.of(context).settings.arguments;
+//    if(cursoData !=null){
+//      curso = cursoData;
+//    }
+
     return Form(
       key: _formKey,
       child: Container(

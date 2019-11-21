@@ -1,4 +1,5 @@
 import 'package:eskool/Pages/course_Page.dart';
+import 'package:eskool/Pages/pasar_lista.dart';
 import 'package:flutter/material.dart';
 import 'package:eskool/Pages/admin_Page.dart';
 
@@ -17,7 +18,7 @@ class HomeState extends State<HomePage>{
  Widget getContentWidget() {
     switch (_selectedPage) {
       case 0:
-        return adminPage();
+        return PasarLista();
       case 1:
         return CoursePage();
       case 2:

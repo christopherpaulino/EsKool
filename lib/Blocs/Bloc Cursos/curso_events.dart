@@ -18,3 +18,12 @@ class AddCurso extends CursoEvent{
   @override
   List<Object> get props =>[curso];
 }
+
+class UpdateCurso extends CursoEvent{
+  final CursoModel curso;
+
+  const UpdateCurso(this.curso);
+
+  @override
+  List<Object> get props => [curso];
+}

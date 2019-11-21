@@ -4,12 +4,17 @@ import 'package:eskool/Models/materiasModel.dart';
 import 'package:eskool/Providers/db_providers.dart';
 import 'package:eskool/Blocs/Bloc Materias/materia_bloc.dart';
 
+class MateriasPage extends StatefulWidget {
+  @override
+  _MateriasPageState createState() => _MateriasPageState();
+}
 
-
-class MateriasPage extends StatelessWidget {
+class _MateriasPageState extends State<MateriasPage> {
   @override
 
   final materiasBloc = MateriaBloc();
+
+  bool _check = false;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +26,7 @@ class MateriasPage extends StatelessWidget {
 //        stream: materiaBloc.materiaStrem,
         FutureBuilder<List<MateriasModel>>(
           future: MateriasProvider.db.list(),
-        builder: (BuildContext context, AsyncSnapshot<List<MateriasModel>> snapshot){
+          builder: (BuildContext context, AsyncSnapshot<List<MateriasModel>> snapshot){
     if (!snapshot.hasData) {
       return
         Center(
@@ -37,17 +42,12 @@ class MateriasPage extends StatelessWidget {
         ),
       );
     }
-
-
-
     return
       ListView(
         children: _listaMapMaterias(context, snapshot.data),
         );
       },
-
       ),
-
     );
   }
 
@@ -57,12 +57,14 @@ class MateriasPage extends StatelessWidget {
       return Center(
         child: Column(
           children:<Widget>[
-
             CheckboxListTile(
-
               title: Text(materia.nombre, style: TextStyle(fontSize: 20.0),),
-              value: true,
-              //onChanged: (){};
+              value: _check,
+              onChanged: (valor){
+                setState(() {
+                  _check = valor;
+                });
+              }
             ),
 
             Divider(
@@ -74,59 +76,7 @@ class MateriasPage extends StatelessWidget {
           ],
         ),
       );
-
-
-
-
-
-
-
-//      return Dismissible(
-//        key: UniqueKey(),
-//        background: Container(
-//          color: Colors.greenAccent,
-//          child: Icon(Icons.update),
-//        ),
-//        onDismissed: (direction) {
-//          if (direction == DismissDirection.endToStart) {
-//            //DBProvider.db.deleteUserById(user.id);
-//            Scaffold.of(context).showSnackBar(
-//                SnackBar(content: Text("Usuario borrado"),)
-//            );
-//          }
-//
-//          if (direction == DismissDirection.startToEnd) {
-//
-//          }
-//        },
-//        secondaryBackground: Container(
-//          color: Colors.redAccent,
-//          child: Icon(Icons.delete),
-//        ),
-//
-//        child: Column(
-//
-//          children: <Widget>[
-//            ListTile(
-//              leading: Icon(Icons.perm_identity),
-//              title: Text(materia.nombre),
-//              subtitle: Text('ID: ${materia.id}' ),
-//              trailing: Icon(Icons.arrow_forward_ios),
-//              onTap: () {
-//                // Navigator.pushNamed(context, 'user_details', arguments: 'user');
-//              },
-//            ),
-//            Divider(
-//              thickness: 2.0,
-//              color: Colors.lightBlue,
-//              indent: 70.0,
-//              endIndent: 20.0,
-//            )
-//          ],
-//        ),
-//      );
     }
     ).toList();
   }
-
 }

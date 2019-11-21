@@ -13,6 +13,14 @@ class CursoProvider extends DBConexion{
     return cursoId;
   }
 
+  Future<int> update(CursoModel curso) async {
+    final db = await database;
+
+    final result = await db
+        .update('curso', curso.toMap(), where: 'curso_id = ?', whereArgs: [curso.curso_id]);
+    return result;
+  }
+
   Future<List<CursoModel>> list() async{
     final db = await database;
     final results = await db.query('curso');
@@ -22,6 +30,9 @@ class CursoProvider extends DBConexion{
         : [];
     return curso;
   }
+
+
+
 }
 
 //Materias
@@ -43,4 +54,7 @@ class MateriasProvider extends DBConexion{
         :[];
     return materias;
   }
+
+
+
 }

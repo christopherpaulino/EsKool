@@ -31,8 +31,12 @@ class CursoBloc{
     await _cursoRespository.add(curso);
     listCurso();
   }
+  updateCurso(CursoModel curso) async {
+    await _cursoRespository.update(curso);
+    listCurso();
+  }
 
-  dispose(){
+    dispose(){
     _cursoBroadcast?.close();
   }
 

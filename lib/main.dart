@@ -1,5 +1,6 @@
 import 'package:eskool/Pages/admin_Page.dart';
 import 'package:eskool/Pages/course_Page.dart';
+import 'package:eskool/Pages/create_Course.dart';
 import 'package:eskool/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      initialRoute: 'home',
+      routes: {
+        'home'     : ( BuildContext context ) => HomePage(),
+        'createCourse'     : ( BuildContext context ) => CreateCourse(),
+        'home'     : ( BuildContext context ) => HomePage(),
+
+      },
       theme: ThemeData(
         // This is the theme of your application.
         //
