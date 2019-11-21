@@ -10,7 +10,7 @@ class _create_studentState extends State<create_student> {
 
 
   TextEditingController nombreController = new TextEditingController();
-  TextEditingController apellidoController = new TextEditingController();
+  TextEditingController apellidosController = new TextEditingController();
   TextEditingController fechaController = new TextEditingController();
   TextEditingController madreController = new TextEditingController();
   TextEditingController madreTelController = new TextEditingController();
@@ -94,7 +94,7 @@ class _create_studentState extends State<create_student> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
       child: TextFormField(
-
+        controller: nombreController,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0)
@@ -112,6 +112,7 @@ class _create_studentState extends State<create_student> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
       child: TextFormField(
+        controller: apellidosController,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0)
@@ -150,6 +151,7 @@ class _create_studentState extends State<create_student> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30),
       child: TextFormField(
+        controller: madreController,
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0)
@@ -166,6 +168,7 @@ class _create_studentState extends State<create_student> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30),
       child: TextFormField(
+        controller: madreTelController,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -183,6 +186,7 @@ class _create_studentState extends State<create_student> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30),
       child: TextFormField(
+        controller: madreEmailController,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -200,6 +204,7 @@ class _create_studentState extends State<create_student> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30),
       child: TextFormField(
+        controller: padreController,
         decoration: InputDecoration(
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15.0)
@@ -216,6 +221,7 @@ class _create_studentState extends State<create_student> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30),
       child: TextFormField(
+        controller: padreTelController,
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -233,6 +239,7 @@ class _create_studentState extends State<create_student> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30),
       child: TextFormField(
+        controller: padreEmailController,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
             border: OutlineInputBorder(
