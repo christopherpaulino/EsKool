@@ -8,7 +8,6 @@ class create_student extends StatefulWidget {
 class _create_studentState extends State<create_student> {
   @override
 
-
   TextEditingController nombreController = new TextEditingController();
   TextEditingController apellidosController = new TextEditingController();
   TextEditingController fechaController = new TextEditingController();
