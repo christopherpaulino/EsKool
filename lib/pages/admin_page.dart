@@ -1,5 +1,6 @@
 import 'package:eskool/pages/course_page.dart';
 import 'package:eskool/pages/create_materia.dart';
+import 'package:eskool/pages/create_student.dart';
 import 'package:flutter/material.dart';
 import 'create_course.dart';
 
@@ -32,7 +33,9 @@ class _adminPageState extends State<adminPage> {
                   child: ListTile(
                     leading: Icon(Icons.person_add),
                     title: Text('Agregar Estudiante'),
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => create_student()));
+                    },
                   ),
                 ),
 
