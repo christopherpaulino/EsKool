@@ -1,7 +1,7 @@
-import 'package:eskool/Pages/admin_Page.dart';
-import 'package:eskool/Pages/course_Page.dart';
-import 'package:eskool/Pages/create_Course.dart';
-import 'package:eskool/home_page.dart';
+import 'package:eskool/Pages/admin_page.dart';
+import 'package:eskool/Pages/course_page.dart';
+import 'package:eskool/Pages/create_course.dart';
+import 'package:eskool/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

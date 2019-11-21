@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'package:equatable/equatable.dart';
-import 'package:eskool/Repository/materias/repository.dart';
+import 'package:eskool/models/materiasModel.dart';
+import 'package:eskool/repository/materias/materia_repository.dart';
+import 'package:eskool/repository/materias/repository.dart';
 import 'package:meta/meta.dart';
-import 'package:eskool/Models/materiasModel.dart';
-import 'package:eskool/Repository/materias/materia_repository.dart';
+
+
 
 part 'materia_events.dart';
 part 'materia_state.dart';

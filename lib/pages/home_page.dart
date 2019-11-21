@@ -1,7 +1,7 @@
-import 'package:eskool/Pages/course_Page.dart';
-import 'package:eskool/Pages/pasar_lista.dart';
+import 'package:eskool/pages/admin_page.dart';
+import 'package:eskool/pages/course_page.dart';
+import 'package:eskool/pages/pasar_lista.dart';
 import 'package:flutter/material.dart';
-import 'package:eskool/Pages/admin_Page.dart';
 
 class HomePage extends StatefulWidget{
 
@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget{
 
 class HomeState extends State<HomePage>{
 
-  int _selectedPage=0;
+  int _selectedPage=1;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
  Widget getContentWidget() {
@@ -58,7 +58,7 @@ class HomeState extends State<HomePage>{
           )
         ],
         currentIndex: _selectedPage,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.blueAccent,
         onTap: _onItemTapped,
       ),
       body: Center(

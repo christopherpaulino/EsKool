@@ -1,8 +1,6 @@
-import 'package:eskool/Models/cursoModel.dart';
-import 'package:eskool/DataBase/db_conexion.dart';
-import 'package:eskool/Models/materiasModel.dart';
-
-//Cursos
+import 'package:eskool/database/db_conexion.dart';
+import 'package:eskool/models/cursoModel.dart';
+import 'package:eskool/models/materiasModel.dart';
 
 class CursoProvider extends DBConexion{
   static final CursoProvider db = CursoProvider();

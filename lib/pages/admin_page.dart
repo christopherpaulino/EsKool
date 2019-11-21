@@ -1,8 +1,7 @@
-import 'package:eskool/Pages/course_Page.dart';
-import 'package:eskool/Pages/create_materia.dart';
+import 'package:eskool/pages/course_page.dart';
+import 'package:eskool/pages/create_materia.dart';
 import 'package:flutter/material.dart';
-import 'create_Course.dart';
-import 'package:eskool/home_page.dart';
+import 'create_course.dart';
 
 
 class adminPage extends StatefulWidget {

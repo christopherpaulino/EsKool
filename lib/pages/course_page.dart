@@ -1,8 +1,6 @@
-import 'package:eskool/Blocs/Bloc Cursos/curso_bloc.dart';
-import 'package:eskool/Models/cursoModel.dart';
-import 'package:eskool/Models/materiasModel.dart';
-import 'package:eskool/Pages/create_Course.dart';
-import 'package:eskool/Providers/db_providers.dart';
+import 'package:eskool/blocs/bloc_curso/curso_bloc.dart';
+import 'package:eskool/models/cursoModel.dart';
+import 'package:eskool/providers/db_providers.dart';
 import 'package:flutter/material.dart';
 
 class CoursePage extends StatefulWidget {

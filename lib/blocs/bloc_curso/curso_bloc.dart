@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:equatable/equatable.dart';
-import 'package:eskool/Repository/curso/repository.dart';
+import 'package:eskool/models/cursoModel.dart';
+import 'package:eskool/repository/curso/curso_repository.dart';
+import 'package:eskool/repository/curso/repository.dart';
 import 'package:meta/meta.dart';
-import 'package:eskool/Models/cursoModel.dart';
-import 'package:eskool/Repository/curso/curso_repository.dart';
 
 part 'curso_events.dart';
 part 'curso_state.dart';

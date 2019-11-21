@@ -11,7 +11,11 @@ class _PasarListaState extends State<PasarLista> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Pase de Lista'),
+        title: Text('Pase de Lista',style: TextStyle(
+          color: Colors.black87,
+          fontSize: 25.0
+        ),),
+        backgroundColor: Colors.white,
       ),
     );
   }

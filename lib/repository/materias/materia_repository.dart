@@ -1,6 +1,8 @@
-import 'package:eskool/Repository/materias/repository.dart';
-import 'package:eskool/Providers/db_providers.dart';
-import 'package:eskool/Models/materiasModel.dart';
+
+
+import 'package:eskool/models/materiasModel.dart';
+import 'package:eskool/providers/db_providers.dart';
+import 'package:eskool/repository/materias/repository.dart';
 
 class MateriaRepository implements Repository<MateriasModel>{
   final provider = MateriasProvider.db;

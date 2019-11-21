@@ -1,7 +1,6 @@
-import 'package:eskool/Models/materiasModel.dart';
-import 'package:eskool/Providers/db_providers.dart';
+import 'package:eskool/blocs/bloc_materias/materia_bloc.dart';
+import 'package:eskool/models/materiasModel.dart';
 import 'package:flutter/material.dart';
-import 'package:eskool/Blocs/Bloc Materias/materia_bloc.dart';
 
 final materiaBloc = MateriaBloc();
 

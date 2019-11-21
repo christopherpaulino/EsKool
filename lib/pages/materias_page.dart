@@ -1,8 +1,8 @@
 import 'package:eskool/Pages/create_materia.dart';
+import 'package:eskool/blocs/bloc_materias/materia_bloc.dart';
+import 'package:eskool/models/materiasModel.dart';
+import 'package:eskool/providers/db_providers.dart';
 import 'package:flutter/material.dart';
-import 'package:eskool/Models/materiasModel.dart';
-import 'package:eskool/Providers/db_providers.dart';
-import 'package:eskool/Blocs/Bloc Materias/materia_bloc.dart';
 
 class MateriasPage extends StatefulWidget {
   @override

@@ -1,9 +1,10 @@
-import 'package:eskool/Blocs/Bloc%20Cursos/curso_bloc.dart';
-import 'package:eskool/Models/cursoModel.dart';
-import 'package:eskool/Providers/db_providers.dart';
-import 'package:eskool/Repository/curso/repository.dart';
 
- class CursoRepository implements Respository<CursoModel>{
+
+ import 'package:eskool/models/cursoModel.dart';
+import 'package:eskool/providers/db_providers.dart';
+import 'package:eskool/repository/curso/repository.dart';
+
+class CursoRepository implements Respository<CursoModel>{
   final provider = CursoProvider.db;
   @override
   Future<List<CursoModel>> list() {
