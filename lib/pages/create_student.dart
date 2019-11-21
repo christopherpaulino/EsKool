@@ -46,7 +46,7 @@ class _create_studentState extends State<create_student> {
             ),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 40.0),
+            margin: EdgeInsets.symmetric(vertical: 10.0),
             padding: EdgeInsets.symmetric(vertical: 30.0),
             width: size.width * 0.85,
             decoration: BoxDecoration(
@@ -82,6 +82,8 @@ class _create_studentState extends State<create_student> {
                 _padreTel(),
                 Divider(),
                 _padreEmail(),
+                Divider(),
+                _guardar()
               ],
             )
           ),
@@ -94,6 +96,7 @@ class _create_studentState extends State<create_student> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 30.0),
       child: TextFormField(
+        autofocus: true,
         controller: nombreController,
         decoration: InputDecoration(
           border: OutlineInputBorder(
@@ -103,6 +106,7 @@ class _create_studentState extends State<create_student> {
           labelText: 'Nombre',
           labelStyle: TextStyle(fontSize: 18.0),
           hintText: 'Juan',
+          suffixIcon: Icon(Icons.accessibility)
         ),
       ),
     );
@@ -110,8 +114,10 @@ class _create_studentState extends State<create_student> {
 
   Widget _apellidos(){
     return Container(
+
       padding: EdgeInsets.symmetric(horizontal: 30.0),
       child: TextFormField(
+
         controller: apellidosController,
         decoration: InputDecoration(
           border: OutlineInputBorder(
@@ -120,6 +126,7 @@ class _create_studentState extends State<create_student> {
           labelText: 'Perez Nuñez',
           labelStyle: TextStyle(fontSize: 18.0),
           hintText: 'Perez',
+
         ),
       ),
     );
@@ -138,6 +145,7 @@ class _create_studentState extends State<create_student> {
           labelText: 'Fecha de nacimiento',
           labelStyle: TextStyle(fontSize: 18.0),
           hintText: 'Fecha de Nacimiento',
+          suffixIcon: Icon(Icons.calendar_today)
         ),
         onTap: (){
           FocusScope.of(context).requestFocus(new FocusNode());
@@ -176,7 +184,8 @@ class _create_studentState extends State<create_student> {
             ),
             labelText: 'Telefono',
             labelStyle: TextStyle(fontSize: 18.0),
-            hintText: '8092905555'
+            hintText: '8092905555',
+            suffixIcon: Icon(Icons.call)
         ),
       ),
     );
@@ -194,7 +203,8 @@ class _create_studentState extends State<create_student> {
             ),
             labelText: 'Correo',
             labelStyle: TextStyle(fontSize: 18.0),
-            hintText: 'juana@hotmail.com'
+            hintText: 'juana@hotmail.com',
+            suffixIcon: Icon(Icons.alternate_email)
         ),
       ),
     );
@@ -229,7 +239,8 @@ class _create_studentState extends State<create_student> {
             ),
             labelText: 'Telefono',
             labelStyle: TextStyle(fontSize: 18.0),
-            hintText: '8092905555'
+            hintText: '8092905555',
+            suffixIcon: Icon(Icons.call)
         ),
       ),
     );
@@ -247,7 +258,8 @@ class _create_studentState extends State<create_student> {
             ),
             labelText: 'Correo',
             labelStyle: TextStyle(fontSize: 18.0),
-            hintText: 'juan@hotmail.com'
+            hintText: 'juan@hotmail.com',
+            suffixIcon: Icon(Icons.alternate_email)
         ),
       ),
     );
@@ -266,5 +278,13 @@ class _create_studentState extends State<create_student> {
         fechaController.text = _fecha;
       });
     }
+  }
+
+  _guardar() {
+    return RaisedButton(
+      child: Text('Agregar'),
+
+    );
+
   }
 }
