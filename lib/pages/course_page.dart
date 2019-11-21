@@ -20,9 +20,7 @@ final cursoBloc = CursoBloc();
 //        stream: cursoBloc.cursoStream,
         FutureBuilder<List<CursoModel>>(
           future: CursoProvider.db.list(),
-
-
-        builder: (BuildContext context, AsyncSnapshot<List<CursoModel>> snapshot) {
+          builder: (BuildContext context, AsyncSnapshot<List<CursoModel>> snapshot) {
 
           if (!snapshot.hasData) {
             return
@@ -39,15 +37,9 @@ final cursoBloc = CursoBloc();
               ),
             );
           }
-
-
-
           return
               ListView(
                 children: _listaMapCursos(context, snapshot.data),
-
-
-
               );
         },
       ),
@@ -57,50 +49,21 @@ final cursoBloc = CursoBloc();
   List<Widget> _listaMapCursos(BuildContext context, List<CursoModel> curso) {
     return  curso.map((cursos) {
 
-      return Dismissible(
-        key: UniqueKey(),
-        background: Container(
-          color: Colors.greenAccent,
-          child: Icon(Icons.update),
-        ),
-        onDismissed: (direction) {
-          if (direction == DismissDirection.endToStart) {
-            //DBProvider.db.deleteUserById(user.id);
-            Scaffold.of(context).showSnackBar(
-                SnackBar(content: Text("Usuario borrado"),)
-            );
-          }
-
-          if (direction == DismissDirection.startToEnd) {
-
-          }
-        },
-        secondaryBackground: Container(
-          color: Colors.redAccent,
-          child: Icon(Icons.delete),
-        ),
-
-        child: Column(
-
+      return Column(
           children: <Widget>[
-            ListTile(
-              leading: Icon(Icons.perm_identity),
-              title: Text(cursos.nombre),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.school),
+                title: Text(cursos.nombre),
 //              subtitle: Text('ID: ${cursos.id}' ),
-              trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () {
-                Navigator.pushNamed(context, 'createCourse', arguments: curso);
-              },
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  Navigator.pushNamed(context, 'createCourse', arguments: curso);
+                },
+              ),
             ),
-            Divider(
-              thickness: 2.0,
-              color: Colors.lightBlue,
-              indent: 70.0,
-              endIndent: 20.0,
-            )
           ],
-        ),
-      );
+        );
     }
     ).toList();
   }
