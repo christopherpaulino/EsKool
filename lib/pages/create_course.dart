@@ -87,7 +87,7 @@ class CreateCourse extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20.0)
                     ),
                     labelText: 'Centro',
-                    suffixIcon: Icon(Icons.book),
+                    suffixIcon: Icon(Icons.location_city),
                     labelStyle: TextStyle(fontSize: 18.0)
                 ),
                 controller: centroController,
