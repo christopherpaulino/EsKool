@@ -1,6 +1,5 @@
-import 'package:eskool/pages/course_page.dart';
-import 'package:eskool/pages/create_materia.dart';
 import 'package:eskool/pages/create_student.dart';
+import 'package:eskool/pages/materias_page.dart';
 import 'package:flutter/material.dart';
 import 'create_course.dart';
 
@@ -54,7 +53,7 @@ class _adminPageState extends State<adminPage> {
                     leading: Icon(Icons.book),
                     title: Text('Materias'),
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => CreateMateria()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => MateriasPage()));
                     },
                   ),
                 ),

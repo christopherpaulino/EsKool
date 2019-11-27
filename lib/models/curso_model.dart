@@ -1,22 +1,26 @@
+
+
+
 class CursoModel{
-  int curso_id;
-  int idMateria;
-  String nombre;
+  int id;
+  String grado,centro;
 
-  CursoModel({this.curso_id, this.nombre, this.idMateria});
 
-  //Constructor
+
+  CursoModel({this.id, this.grado, this.centro}); //Constructor
+
   CursoModel.fromMap(Map<String, dynamic>map){
-    curso_id = map['curso_id'];
-    nombre = map['nombre'];
-   // idMateria =map['idMateria'];
+    id = map['id'];
+    grado = map['grado'];
+    centro =map['centro'];
   }
 
   //Metodo
   Map<String, dynamic> toMap(){
     return{
-      'curso_id': curso_id,
-      'nombre': nombre,
+      'id': id,
+      'grado': grado,
+      'centro':centro
       //'idMateria'; idMateria,
     };
   }

@@ -98,8 +98,11 @@ class CreateCourse extends StatelessWidget {
               RaisedButton(
                 child: Text('Agregar'),
                 onPressed: (){
+                  curso.grado=cursoController.text;
+                  curso.centro = centroController.text;
+
                   //CursoProvider.db.add(CursoModel(nombre: cursoController.text));
-                  cursoBloc.addCurso(CursoModel(nombre: cursoController.text));
+                  cursoBloc.addCurso(curso);
 //                  if(_formKey.currentState.validate()){
 //                    //CursoProvider.db.addCurso(CursoModel(nombre: cursoController.text));
 

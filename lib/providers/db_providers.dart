@@ -1,4 +1,4 @@
-import 'package:eskool/database/db_conexion.dart';
+  import 'package:eskool/database/db_conexion.dart';
 import 'package:eskool/models/curso_model.dart';
 import 'package:eskool/models/materias_model.dart';
 
@@ -15,7 +15,7 @@ class CursoProvider extends DBConexion{
     final db = await database;
 
     final result = await db
-        .update('curso', curso.toMap(), where: 'curso_id = ?', whereArgs: [curso.curso_id]);
+        .update('curso', curso.toMap(), where: 'id= ?', whereArgs: [curso.id]);
     return result;
   }
 

@@ -15,9 +15,14 @@ final cursoBloc = CursoBloc();
 
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text("Cursos",style: TextStyle(color: Colors.black),),
+      ),
       body:
 //      StreamBuilder<List<CursoModel>>(
 //        stream: cursoBloc.cursoStream,
+
         FutureBuilder<List<CursoModel>>(
           future: CursoProvider.db.list(),
           builder: (BuildContext context, AsyncSnapshot<List<CursoModel>> snapshot) {
@@ -46,19 +51,19 @@ final cursoBloc = CursoBloc();
     ) ;
   }
 
-  List<Widget> _listaMapCursos(BuildContext context, List<CursoModel> curso) {
-    return  curso.map((cursos) {
+  List<Widget> _listaMapCursos(BuildContext context, List<CursoModel> cursos) {
+    return  cursos.map((curso) {
 
       return Column(
           children: <Widget>[
             Card(
               child: ListTile(
                 leading: Icon(Icons.school),
-                title: Text(cursos.nombre),
+                title: Text('${curso.grado}-${curso.centro}'),
 //              subtitle: Text('ID: ${cursos.id}' ),
                 trailing: Icon(Icons.arrow_forward_ios),
                 onTap: () {
-                  Navigator.pushNamed(context, 'createCourse', arguments: curso);
+                  Navigator.pushNamed(context, 'createCourse', arguments: cursos);
                 },
               ),
             ),

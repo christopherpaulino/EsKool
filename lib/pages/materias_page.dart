@@ -1,6 +1,7 @@
 import 'package:eskool/Pages/create_materia.dart';
 import 'package:eskool/blocs/bloc_materias/materia_bloc.dart';
 import 'package:eskool/models/materias_model.dart';
+import 'package:eskool/pages/create_materia.dart' as prefix0;
 import 'package:eskool/providers/db_providers.dart';
 import 'package:flutter/material.dart';
 
@@ -19,8 +20,13 @@ class _MateriasPageState extends State<MateriasPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "Materias"
+        ),
         backgroundColor: Colors.blueAccent,
       ),
+      floatingActionButton: _floatingButton(),
       body:
 //      StreamBuilder<List<MateriasModel>>(
 //        stream: materiaBloc.materiaStrem,
@@ -48,6 +54,15 @@ class _MateriasPageState extends State<MateriasPage> {
         );
       },
       ),
+    );
+  }
+
+  Widget _floatingButton() {
+    return FloatingActionButton(
+      child: Icon(Icons.add),
+      onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => CreateMateria()));
+      },
     );
   }
 
