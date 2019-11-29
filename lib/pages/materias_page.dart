@@ -54,25 +54,48 @@ class _MateriasPageState extends State<MateriasPage> {
   List<Widget> _listaMapMaterias(BuildContext context, List<MateriasModel> materia) {
     return  materia.map((materia) {
 
-      return Center(
-        child: Column(
-          children:<Widget>[
-            CheckboxListTile(
-              title: Text(materia.nombre, style: TextStyle(fontSize: 20.0),),
-              value: _check,
-              onChanged: (valor){
-                setState(() {
-                  _check = valor;
-                });
-              }
-            ),
+      return Dismissible(
+        key: UniqueKey(),
+        background: Container(
+          color: Colors.greenAccent,
+          child: Icon(Icons.update),
+        ),
+        onDismissed: (direction) {
+          if (direction == DismissDirection.endToStart) {
+//            DBProvider.db.deleteUserById(user.id);
+            Scaffold.of(context).showSnackBar(
+                SnackBar(content: Text("Usuario borrado"),)
+            );
+          }
 
+          if (direction == DismissDirection.startToEnd) {
+
+          }
+        },
+        secondaryBackground: Container(
+          color: Colors.redAccent,
+          child: Icon(Icons.delete),
+        ),
+
+        child: Column(
+
+          children: <Widget>[
+
+            ListTile(
+              leading: Icon(Icons.perm_identity),
+              title: Text(materia.nombre),
+              subtitle: Text('ID: ${materia.materia_id}'),
+              trailing: Icon(Icons.arrow_forward_ios),
+//              onTap: () {
+//                Navigator.pushNamed(context, 'user_details', arguments: 'user');
+//              },
+            ),
             Divider(
               thickness: 2.0,
               color: Colors.lightBlue,
-              indent: 20.0,
+              indent: 70.0,
               endIndent: 20.0,
-            ),
+            )
           ],
         ),
       );

@@ -1,12 +1,14 @@
 import 'package:eskool/blocs/bloc_materias/materia_bloc.dart';
 import 'package:eskool/models/materias_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 final materiaBloc = MateriaBloc();
 
 class CreateMateria extends StatelessWidget {
   @override
   final materiaController = TextEditingController();
+
 
 
   Widget build(BuildContext context) {
@@ -53,6 +55,19 @@ class CreateMateria extends StatelessWidget {
 
             child: Column(
               children: <Widget>[
+//                SizedBox(height: 40.0,),
+//                TextFormField(
+//                  autofocus: true,
+//                  decoration: InputDecoration(
+//                      border: OutlineInputBorder(
+//                          borderRadius: BorderRadius.circular(20.0)
+//                      ),
+//                      labelText: 'ID',
+//                      suffixIcon: Icon(Icons.book),
+//                      labelStyle: TextStyle(fontSize: 18.0)
+//                  ),
+//                  controller: IdController,
+//                ),
                 SizedBox(height: 40.0,),
                 TextFormField(
                   autofocus: true,
@@ -73,6 +88,7 @@ class CreateMateria extends StatelessWidget {
                   onPressed: () {
                     //MateriasProvider.db.add(MateriasModel(nombre: materiaController.text));
                     materiaBloc.addMateria(MateriasModel(nombre: materiaController.text));
+
                   },
                 ),
                 SizedBox(height: 30.0,),

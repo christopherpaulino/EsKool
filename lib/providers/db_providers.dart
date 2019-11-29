@@ -1,6 +1,9 @@
 import 'package:eskool/database/db_conexion.dart';
 import 'package:eskool/models/curso_model.dart';
+import 'package:eskool/models/estudiante_model.dart';
 import 'package:eskool/models/materias_model.dart';
+import 'package:eskool/pages/create_materia.dart';
+import 'package:sqflite/sql.dart';
 
 class CursoProvider extends DBConexion{
   static final CursoProvider db = CursoProvider();
@@ -28,9 +31,6 @@ class CursoProvider extends DBConexion{
         : [];
     return curso;
   }
-
-
-
 }
 
 //Materias
@@ -52,7 +52,24 @@ class MateriasProvider extends DBConexion{
         :[];
     return materias;
   }
+}
 
+//Estudiante
+class EstudiantesProvider extends DBConexion{
+  static final EstudiantesProvider db = EstudiantesProvider();
 
+  Future<int> add(EstudianteModel estudiante) async{
+    final db = await database;
+    final estudianteId = await db.insert('estudiante', estudiante.toMap());
+    return estudianteId;
+  }
 
+  Future<List<EstudianteModel>> list() async{
+    final db = await database;
+    final results = await db.query('estudiante');
+    List<EstudianteModel> estudiantes = results.isNotEmpty ? results.map((estudiantes) => EstudianteModel.fromMap(estudiantes))
+        .toList()
+        :[];
+    return estudiantes;
+  }
 }
