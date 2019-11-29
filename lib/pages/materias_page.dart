@@ -82,7 +82,7 @@ class _MateriasPageState extends State<MateriasPage> {
           children: <Widget>[
 
             ListTile(
-              leading: Icon(Icons.perm_identity),
+              leading: Icon(Icons.school),
               title: Text(materia.nombre),
               subtitle: Text('ID: ${materia.materia_id}'),
               trailing: Icon(Icons.arrow_forward_ios),

@@ -3,6 +3,9 @@ import 'package:eskool/models/curso_model.dart';
 import 'package:eskool/providers/db_providers.dart';
 import 'package:flutter/material.dart';
 
+import 'curso_menu.dart';
+import 'materias_page.dart';
+
 class CoursePage extends StatefulWidget {
   @override
   _CoursePageState createState() => _CoursePageState();
@@ -58,7 +61,8 @@ final cursoBloc = CursoBloc();
               subtitle: Text('Materia: ${cursos.materia_id}' ),
                 trailing: Icon(Icons.arrow_forward_ios),
                 onTap: () {
-                  Navigator.pushNamed(context, 'createCourse', arguments: curso);
+                 // Navigator.pushNamed(context, 'createCourse', arguments: curso);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => CursoMenu()));
                 },
               ),
             ),
