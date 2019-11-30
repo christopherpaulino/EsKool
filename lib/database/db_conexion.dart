@@ -28,11 +28,13 @@ class DBConexion{
       version: 2,
       onOpen: (db){},
       onCreate:(Database db, int version) async{
-        await db.execute('CREATE TABLE materias(materia_id INTEGER PRIMARY KEY AUTOINCREMENT,'
+        await db.execute('CREATE TABLE materias(id INTEGER PRIMARY KEY AUTOINCREMENT,'
             ' nombre VARCHAR NOT NULL)');
         await db.execute('CREATE TABLE curso(id INTEGER PRIMARY KEY AUTOINCREMENT,'
             ' grado VARCHAR NOT NULL,'
             ' centro VARCHAR NOT NULL)');
+        await db.execute('CREATE TABLE curso_materia(curso_id INTEGER NOT NULL,'
+            ' materia_id INTEGER NOT NULL)');
 //        await db.execute('CREATE TABLE estudiante(estudiante_id INTEGER PRIMARY KEY AUTOINCREMET,'
 //            ' nombre VARCHAR NOT NULL,'
 //            ' madre_nombre VARCHAR,'

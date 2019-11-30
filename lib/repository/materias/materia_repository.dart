@@ -9,13 +9,12 @@ class MateriaRepository implements Repository<MateriasModel>{
 
   @override
   Future<List<MateriasModel>> list() {
-    // TODO: implement list
+
     return provider.list();
   }
 
   @override
   Future<void> add(MateriasModel materia) {
-    // TODO: implement add
     return provider.add(materia);
   }
 }

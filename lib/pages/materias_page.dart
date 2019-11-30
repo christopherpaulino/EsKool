@@ -15,7 +15,6 @@ class _MateriasPageState extends State<MateriasPage> {
 
   final materiasBloc = MateriaBloc();
 
-  bool _check = false;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,14 +71,9 @@ class _MateriasPageState extends State<MateriasPage> {
       return Center(
         child: Column(
           children:<Widget>[
-            CheckboxListTile(
+            ListTile(
               title: Text(materia.nombre, style: TextStyle(fontSize: 20.0),),
-              value: _check,
-              onChanged: (valor){
-                setState(() {
-                  _check = valor;
-                });
-              }
+
             ),
 
             Divider(
