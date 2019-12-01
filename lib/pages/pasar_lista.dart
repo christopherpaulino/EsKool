@@ -11,6 +11,8 @@ class _PasarListaState extends State<PasarLista> {
   @override
 
   final check = new Set<ListTile>();
+  bool _isChecked = false, _check = false;
+
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,6 +75,16 @@ class _PasarListaState extends State<PasarLista> {
 
           children: <Widget>[
 
+//            CheckboxListTile(
+//              title: Text(estudiante.nombre),
+//              value: _isChecked,
+//              onChanged: (_check){
+//                setState(() {
+//                  _isChecked = _check;
+//                });
+//              },
+//            ),
+
             ListTile(
               leading: Icon(Icons.perm_identity),
               title: Text(estudiante.nombre),
@@ -83,12 +95,13 @@ class _PasarListaState extends State<PasarLista> {
                 //Navigator.pushNamed(context, 'user_details', arguments: 'user');
               },
             ),
-//            Divider(
-//              thickness: 2.0,
-//              color: Colors.lightBlue,
-//              indent: 70.0,
-//              endIndent: 20.0,
-//            )
+
+            Divider(
+              thickness: 2.0,
+              color: Colors.lightBlue,
+              indent: 70.0,
+              endIndent: 20.0,
+            )
           ],
         ),
       );
