@@ -1,3 +1,5 @@
+import 'package:eskool/models/estudiante_model.dart';
+import 'package:eskool/providers/db_providers.dart';
 import 'package:flutter/material.dart';
 
 class create_student extends StatefulWidget {
@@ -66,8 +68,8 @@ class _create_studentState extends State<create_student> {
                 SizedBox(height: 20.0,),
                 _nombre(),
                 Divider(),
-                _apellidos(),
-                Divider(),
+//                _apellidos(),
+//                Divider(),
                 _fechaNacimiento(context),
                 Divider(),
                 _madre(),
@@ -104,7 +106,7 @@ class _create_studentState extends State<create_student> {
           //icon: Icon(Icons.),
           labelText: 'Nombre',
           labelStyle: TextStyle(fontSize: 18.0),
-          hintText: 'Juan',
+          hintText: 'Juan Perez',
           suffixIcon: Icon(Icons.accessibility)
         ),
       ),
@@ -282,6 +284,9 @@ class _create_studentState extends State<create_student> {
   _guardar() {
     return RaisedButton(
       child: Text('Agregar'),
+      onPressed: (){
+        EstudiantesProvider.db.add(EstudianteModel(nombre: nombreController.text));
+      },
 
     );
 
