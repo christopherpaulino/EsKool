@@ -58,7 +58,7 @@ final cursoBloc = CursoBloc();
               child: ListTile(
                 leading: Icon(Icons.school),
                 title: Text(cursos.nombre),
-              subtitle: Text('Materia: ${cursos.materia_id}' ),
+              subtitle: Text(cursos.centro),
                 trailing: Icon(Icons.arrow_forward_ios),
                 onTap: () {
                  // Navigator.pushNamed(context, 'createCourse', arguments: curso);

@@ -286,6 +286,15 @@ class _create_studentState extends State<create_student> {
       child: Text('Agregar'),
       onPressed: (){
         EstudiantesProvider.db.add(EstudianteModel(nombre: nombreController.text));
+        nombreController.clear();
+        fechaController.clear();
+        madreEmailController.clear();
+        madreTelController.clear();
+        madreController.clear();
+        padreEmailController.clear();
+        padreTelController.clear();
+        padreController.clear();
+        //Navigator.push(context, MaterialPageRoute(builder: (context) => create_student()));
       },
 
     );

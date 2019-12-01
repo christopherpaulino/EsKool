@@ -82,7 +82,7 @@ class _MateriasPageState extends State<MateriasPage> {
           children: <Widget>[
 
             ListTile(
-              leading: Icon(Icons.school),
+              leading: Icon(Icons.book),
               title: Text(materia.nombre),
               subtitle: Text('ID: ${materia.materia_id}'),
               trailing: Icon(Icons.arrow_forward_ios),
@@ -90,12 +90,12 @@ class _MateriasPageState extends State<MateriasPage> {
 //                Navigator.pushNamed(context, 'user_details', arguments: 'user');
 //              },
             ),
-            Divider(
-              thickness: 2.0,
-              color: Colors.lightBlue,
-              indent: 70.0,
-              endIndent: 20.0,
-            )
+//            Divider(
+//              thickness: 2.0,
+//              color: Colors.lightBlue,
+//              indent: 70.0,
+//              endIndent: 20.0,
+//            )
           ],
         ),
       );

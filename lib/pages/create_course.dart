@@ -102,7 +102,7 @@ class _CreateCourseState extends State<CreateCourse> {
 
                   TextFormField(
                     autofocus: true,
-                    initialValue: Curso.nombre,
+
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0)
@@ -169,20 +169,24 @@ class _CreateCourseState extends State<CreateCourse> {
                       print(' Este es el valor $bio');
                       if(esp == true){
                         int espanol = 1;
-                        cursoBloc.addCurso(CursoModel(materia_id: espanol, nombre: cursoController.text));
+                        cursoBloc.addCurso(CursoModel(materia_id: espanol, nombre: cursoController.text, centro: centroController.text));
                       }
                       else if(mat == true){
                         int matematicas = 2;
-                        cursoBloc.addCurso(CursoModel(materia_id: matematicas, nombre: cursoController.text));
+                        cursoBloc.addCurso(CursoModel(materia_id: matematicas, nombre: cursoController.text, centro: centroController.text));
                       }
                       else if(his == true){
                         int historia = 3;
-                        cursoBloc.addCurso(CursoModel(materia_id: historia, nombre: cursoController.text));
+                        cursoBloc.addCurso(CursoModel(materia_id: historia, nombre: cursoController.text, centro: centroController.text));
                       }
                       else {
                         int biologia = 4;
-                        cursoBloc.addCurso(CursoModel(materia_id: biologia,nombre: cursoController.text));
+                        cursoBloc.addCurso(CursoModel(materia_id: biologia,nombre: cursoController.text, centro: centroController.text));
                       }
+                      centroController.clear();
+                      cursoController.clear();
+                     // Navigator.push(context, MaterialPageRoute(builder: (context) => CreateCourse()));
+
                     },
                   ),
 //              RaisedButton(

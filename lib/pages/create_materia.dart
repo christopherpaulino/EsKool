@@ -88,7 +88,8 @@ class CreateMateria extends StatelessWidget {
                   onPressed: () {
                     //MateriasProvider.db.add(MateriasModel(nombre: materiaController.text));
                     materiaBloc.addMateria(MateriasModel(nombre: materiaController.text));
-
+                    materiaController.clear();
+                    //Navigator.push(context, MaterialPageRoute(builder: (context) => CreateMateria()));
                   },
                 ),
                 SizedBox(height: 30.0,),

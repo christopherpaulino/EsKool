@@ -74,7 +74,7 @@ class _PasarListaState extends State<PasarLista> {
           children: <Widget>[
 
             ListTile(
-              leading: Icon(Icons.school),
+              leading: Icon(Icons.perm_identity),
               title: Text(estudiante.nombre),
               subtitle: Text('ID: ${estudiante.esturiante_id}'),
               trailing: new Icon(isChecked ? Icons.check_box : Icons.check_box_outline_blank),
@@ -83,12 +83,12 @@ class _PasarListaState extends State<PasarLista> {
                 //Navigator.pushNamed(context, 'user_details', arguments: 'user');
               },
             ),
-            Divider(
-              thickness: 2.0,
-              color: Colors.lightBlue,
-              indent: 70.0,
-              endIndent: 20.0,
-            )
+//            Divider(
+//              thickness: 2.0,
+//              color: Colors.lightBlue,
+//              indent: 70.0,
+//              endIndent: 20.0,
+//            )
           ],
         ),
       );

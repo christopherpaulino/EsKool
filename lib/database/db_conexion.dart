@@ -21,7 +21,7 @@ class DBConexion{
 
   initDataBase() async {
     Directory appDirectory = await getApplicationDocumentsDirectory();
-    final String path = join(appDirectory.path, 'eskools9121.db');
+    final String path = join(appDirectory.path, 'eskools6.db');
 
     return await openDatabase(
       path,
@@ -32,7 +32,7 @@ class DBConexion{
             ' nombre VARCHAR NOT NULL)');
         await db.execute('CREATE TABLE curso(curso_id INTEGER PRIMARY KEY AUTOINCREMENT,'
             ' nombre VARCHAR NOT NULL,'
-            ' materia_id INTEGER)');
+            ' materia_id INTEGER, centro VARCHAR)');
 
         await db.execute('CREATE TABLE estudiante(estudiante_id INTEGER PRIMARY KEY AUTOINCREMENT,'
             ' nombre VARCHAR NOT NULL,'
